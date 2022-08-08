@@ -37,7 +37,7 @@ class BanditEnv(gym.Env):
 
         self.n_bandits = len(p_dist)
         self.action_space = spaces.Discrete(self.n_bandits)
-        self.observation_space = spaces.box.Box(-1.0, 1.0, (1)) #
+        self.observation_space = spaces.box.Box(-1.0, 1.0, (1,)) #
         #self.observation_space = spaces.Discrete(1)
 
         self._seed()
