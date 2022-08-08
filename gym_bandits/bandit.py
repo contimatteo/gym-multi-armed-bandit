@@ -58,10 +58,10 @@ class BanditEnv(gym.Env):
             else:
                 reward = np.random.normal(self.r_dist[action][0], self.r_dist[action][1])
 
-        return [0], reward, done, self.info #
+        return [0.], reward, done, self.info #
 
     def _reset(self):
-        return [0] #
+        return [0.], None #
 
     def _render(self, mode='human', close=False):
         pass
