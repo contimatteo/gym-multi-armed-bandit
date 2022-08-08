@@ -37,8 +37,8 @@ class BanditEnv(gym.Env):
 
         self.n_bandits = len(p_dist)
         self.action_space = spaces.Discrete(self.n_bandits)
-        self.observation_space = spaces.box.Box(-1.0, 1.0, (1,)) #
-        #self.observation_space = spaces.Discrete(1)
+        # self.observation_space = spaces.box.Box(-1.0, 1.0, (1,)) #
+        self.observation_space = spaces.Discrete(1)
 
         self._seed()
 
@@ -58,10 +58,10 @@ class BanditEnv(gym.Env):
             else:
                 reward = np.random.normal(self.r_dist[action][0], self.r_dist[action][1])
 
-        return [0.], reward, done, self.info #
+        return 0, reward, done, self.info #
 
     def _reset(self):
-        return [0.], None #
+        return 0, None #
 
     def _render(self, mode='human', close=False):
         pass
