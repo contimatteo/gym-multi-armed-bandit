@@ -54,6 +54,11 @@ cd gym-bandits
 pip install -e .
 ```
 
+To install using `requirements.txt` or `environment.yml` call:
+```
+git+https://github.com/contimatteo/gym-multi-armed-bandit#egg=gym-bandits
+```
+
 In your gym environment
 ```
 import gym_bandits
